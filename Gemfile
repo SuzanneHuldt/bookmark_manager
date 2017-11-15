@@ -2,13 +2,14 @@
 
 source "https://rubygems.org"
 
-ruby '2.4.0'
+ruby '2.4.2'
 
 gem 'dm-transactions'
 gem 'sinatra'
 gem "capybara"
 gem "data_mapper"
 gem "dm-postgres-adapter"
+gem "pg"
 gem "rspec"
 gem "simplecov"
 gem "simplecov-console"
