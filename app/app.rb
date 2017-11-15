@@ -1,12 +1,23 @@
+ENV['RACK_ENV'] ||= 'development'
+
 require 'sinatra/base'
 require_relative './models/link.rb'
+require 'dm-postgres-adapter'
+
+
+DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
+
+#DataMapper.setup(:test, "postgres://localhost/bookmark_manager_test")
+
+
+DataMapper.finalize
+
+DataMapper.auto_upgrade!
+
 
 class App < Sinatra::Base
 
   enable :sessions
-
-  set :session_secret, 'key'
-
 
   get '/' do
     erb(:index)

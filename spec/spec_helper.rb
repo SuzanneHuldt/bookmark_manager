@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] = 'TEST' # hat is it? what does it do?
+ENV['RACK_ENV'] = 'test'
 
 
 require 'capybara'
