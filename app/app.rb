@@ -6,8 +6,8 @@ require 'dm-postgres-adapter'
 
 
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/bookmark_manager_production')
 
-#DataMapper.setup(:test, "postgres://localhost/bookmark_manager_test")
 
 
 DataMapper.finalize

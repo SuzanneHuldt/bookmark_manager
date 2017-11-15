@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+ruby '2.4.0'
+
 gem 'dm-transactions'
 gem 'sinatra'
 gem "capybara"
