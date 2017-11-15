@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/suzannehuldt/Documents/week_4/bookmark_manager/spec/features/app_spec.rb": [
+      "/Users/ipbianco/Projects/Makers/Week_4/Day_3/bookmark_manager/spec/features/app_spec.rb": [
         1,
         1
       ],
-      "/Users/suzannehuldt/Documents/week_4/bookmark_manager/spec/features/creating_links_spec.rb": [
+      "/Users/ipbianco/Projects/Makers/Week_4/Day_3/bookmark_manager/spec/features/creating_links_spec.rb": [
         null,
         null,
         1,
@@ -21,8 +21,32 @@
         null,
         null,
         null
+      ],
+      "/Users/ipbianco/Projects/Makers/Week_4/Day_3/bookmark_manager/spec/features/tag_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1510744287
+    "timestamp": 1510764717
   }
 }

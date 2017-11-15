@@ -2,13 +2,9 @@ ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require_relative './models/link.rb'
+require_relative './models/tag.rb'
 require 'dm-postgres-adapter'
-
-
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
-DataMapper.finalize
-DataMapper.auto_upgrade!
-
+require_relative './data_mapper_setup'
 
 class App < Sinatra::Base
 
@@ -20,6 +16,7 @@ class App < Sinatra::Base
 
   get '/links' do
     @links = Link.all
+    @link_tag = LinkTag.all
     erb(:link)
   end
 
@@ -29,9 +26,11 @@ class App < Sinatra::Base
   end
 
   post '/links' do
-   Link.create(url: params[:url], title: params[:title])
-    redirect to('/links')
-  end
+   link = Link.create(url: params[:url], title: params[:title])
+   tag = Tag.create(tag: params[:tag])
+   LinkTag.create(:link => link, :tag => tag)
+   redirect to('/links')
+ end
 
   run! if app_file == $0
 end

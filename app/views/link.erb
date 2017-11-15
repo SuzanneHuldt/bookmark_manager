@@ -9,3 +9,17 @@
     </li>
   <% end %>
 </ul>
+
+
+<% @link_tag.each do |pair| %>
+    @links.each do |link|
+      if link.id == pair.link_id
+        link.title
+      end
+    @tags.each do |tag|
+        if tag.id == pair.tag_id
+          tag.title
+        end
+  end
+
+<% end %>
