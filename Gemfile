@@ -16,6 +16,7 @@ gem "simplecov-console"
 group :test do
   gem "database_cleaner"
 end
+gem "rake"
 
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
