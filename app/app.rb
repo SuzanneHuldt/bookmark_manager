@@ -32,9 +32,13 @@ class App < Sinatra::Base
   end
 
   post '/links' do
-   link = Link.create(url: params[:url], title: params[:title])
-   tag = Tag.create(tag: params[:tag])
-   LinkTag.create(:link => link, :tag => tag)
+   link = Link.first_or_create(url: params[:url], title: params[:title])
+   tags = params[:tag].split(', ')
+   tags.each do |tag_name|
+     p tag_name
+     tag = Tag.first_or_create(tag: tag_name)
+     LinkTag.create(:link => link, :tag => tag)
+   end
    redirect to('/links')
  end
 
