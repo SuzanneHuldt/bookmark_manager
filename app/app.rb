@@ -16,13 +16,19 @@ class App < Sinatra::Base
 
   get '/links' do
     @links = Link.all
-    @link_tag = LinkTag.all
     erb(:link)
   end
 
   get '/links/new' do
     erb(:newlinks)
 
+  end
+
+  get '/tag/:tag' do
+    @tag = params[:tag]
+    tag = Tag.first(tag: @tag)
+    @links = tag ? tag.links : []
+    erb(:link)
   end
 
   post '/links' do
